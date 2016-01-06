@@ -12,5 +12,9 @@
     </div>
   <% end %>
   <p><%= f.text_field :name %></p>
-  <p><%= f.submit 'Създай анкетата' %></p>
+  <p>
+    <%= f.submit 'Създай анкетата' %>
+    или
+    <%= link_to 'обратно към списъка с анкети', quizzes_path %>
+  </p>
 <% end %>

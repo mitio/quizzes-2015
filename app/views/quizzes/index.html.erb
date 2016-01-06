@@ -1,9 +1,11 @@
 <h1>Анкети</h1>
 
+<p><%= link_to 'Добави анкета', new_quiz_path %></p>
+
 <% if @quizzes.any? %>
   <ul>
     <% @quizzes.each do |quiz| %>
-      <li><%= quiz.name %></li>
+      <li><%= link_to quiz.name, quiz %></li>
     <% end %>
   </ul>
 <% else %>
