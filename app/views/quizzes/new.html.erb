@@ -1,0 +1,16 @@
+<h1>Нова анкета</h1>
+
+<%= form_for @quiz do |f| %>
+  <% if @quiz.errors.any? %>
+    <div class="errors">
+      <h2>Грешки:</h2>
+      <ul>
+        <% @quiz.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p><%= f.text_field :name %></p>
+  <p><%= f.submit 'Създай анкетата' %></p>
+<% end %>
