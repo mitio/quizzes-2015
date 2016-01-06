@@ -1,3 +1,16 @@
 <h1><%= @quiz.name %></h1>
 
-<p><%= link_to 'Обратно към списъка с анкети', quizzes_path %></p>
+<p>
+  <%= link_to 'Добави въпрос', new_quiz_question_path(@quiz) %> |
+  <%= link_to 'Обратно към списъка с анкети', quizzes_path %>
+</p>
+
+<% if @quiz.questions.any? %>
+  <ul>
+    <% @quiz.questions.each do |question| %>
+      <li><%= question.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Все още няма въпроси.</p>
+<% end %>
