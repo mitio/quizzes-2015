@@ -1,0 +1,11 @@
+<h1>Анкети</h1>
+
+<% if @quizzes.any? %>
+  <ul>
+    <% @quizzes.each do |quiz| %>
+      <li><%= quiz.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Все още няма анкети.</p>
+<% end %>
